@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
-package 'which' do
-  action :install
+case node[:platform]
+when "centos","redhat","scientific"
+  package 'which' do
+    action :install
+  end
 end
